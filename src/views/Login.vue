@@ -28,7 +28,7 @@ const login = () => {
         if (res.status == 200) {
           data.pesanLogin = 'Anda berhasil login'
           auth.authenticated()
-          router.push('about')
+          router.push('transfer')
         }
         data.snackbar = true
       },

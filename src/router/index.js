@@ -26,7 +26,7 @@ const router = createRouter({
       path: '/transfer',
       name: 'transfer',
       component: () => import('../views/Transfer.vue')
-    },
+    }
   ]
 })
 

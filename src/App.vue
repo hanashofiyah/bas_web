@@ -1,21 +1,22 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
-import Header from './components/Header.vue'
-import { reactive } from 'vue'
+// import Header from './components/Header.vue'
+// import { reactive } from 'vue'
 import { useAuthStore } from './stores/auth'
 
+// const data = reactive()
 const auth = useAuthStore()
 
-const data = reactive({
-  variable1: 'variable 1',
-  counter: 1,
-  variable2: [1, 2, 3, 4]
-})
+// const data = reactive({
+//   variable1: 'variable 1',
+//   counter: 1,
+//   variable2: [1, 2, 3, 4]
+// })
 
-const tambahCounter = () => {
-  data.counter++
-}
+// const tambahCounter = () => {
+//   data.counter++
+// }
 </script>
 
 <template>
@@ -23,7 +24,7 @@ const tambahCounter = () => {
     <img alt="Vue Logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <Header :text="'Hellow Everyone'">
+      <!-- <Header :text="'Welcome'">
         <button @click="tambahCounter">Tambah counter</button>
         Hello ALL {{ data.counter }}
         <p>Hello Hello</p>
@@ -33,14 +34,14 @@ const tambahCounter = () => {
       </Header>
       {{ data.variable1 }}
       {{ data.variable2 }}
-      {{ data.variable3 }}
-      <HelloWorld msg="You did it!" />
+      {{ data.variable3 }} -->
+      <HelloWorld msg="Welcome, everyone! We're glad you're here." />
 
       <nav>
         <RouterLink v-if="auth.isLoggedIn" to="/">Home</RouterLink>
         <RouterLink v-if="auth.isLoggedIn" to="/about">About</RouterLink>
         <RouterLink v-if="!auth.isLoggedIn" to="/login">Login</RouterLink>
-        <RouterLink v-if="auth.isLoggedIn" to="/transfer">Transfer</RouterLink>
+        <RouterLink v-if="auth.isLoggedIn" to="/transaction">Transfer</RouterLink>
       </nav>
     </div>
   </header>
@@ -54,7 +55,7 @@ const tambahCounter = () => {
 header {
   line-height: 1.5;
   max-height: 100vh;
-  background-color: aqua;
+  background-color: pink;
   color: maroon;
 }
 

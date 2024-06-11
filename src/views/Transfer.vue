@@ -5,10 +5,11 @@ import router from '@/router/index';
 import { VNumberInput } from 'vuetify/labs/VNumberInput'
 
 const data = reactive({
-    accountID: '',
-    bankID: '',
-    amount: '',
-    transactionDate: '',
+    // ID : '',
+    AccountID: '',
+    BankID: '',
+    Amount: 0,
+    TransactionDate: '',
     snackbar: false,
     pesanTransfer: ''
 })
@@ -19,10 +20,11 @@ const transfer = () => {
     console.log('transfer clicked', data);
     
     myAxios.post('/transaction/transfer-bank', {
-        accountID: data.accountID,
-        bankID: data.bankID,
-        amount: data.amount,
-        transactionDate: data.transactionDate
+        // ID: data.ID,
+        AccountID: data.AccountID,
+        BankID: data.BankID,
+        Amount: data.Amount,
+        TransactionDate: data.TransactionDate
     }).then((res) => {
         if (res.status == 200){
             data.pesanTransfer = "Anda Berhasil Transfer"
@@ -38,21 +40,25 @@ const transfer = () => {
 
 <template>
   <div class="container">
+    <!-- <div>
+          <label>ID</label>
+          <v-text-field type="text" v-model="data.ID"></v-text-field>
+      </div> -->
     <div>
           <label>Bank ID</label>
-          <v-text-field type="text" v-model="data.bankID"></v-text-field>
+          <v-text-field type="text" v-model="data.BankID"></v-text-field>
       </div>
       <div>
           <label>Account ID</label>
-          <v-text-field type="text" v-model="data.accountID"></v-text-field>
+          <v-text-field type="text" v-model="data.AccountID"></v-text-field>
       </div>
       <div>
           <label>Amount</label>
-          <v-number-input v-model="data.amount"></v-number-input>
+          <v-number-input v-model="data.Amount"></v-number-input>
       </div>
       <div>
           <label>Transaction Date</label>
-          <v-text-field type="text" v-model="data.transactionDate"></v-text-field>
+          <v-text-field type="text" v-model="data.TransactionDate"></v-text-field>
       </div>
       <v-card class="pa-5">
           <div>

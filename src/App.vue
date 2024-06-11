@@ -1,7 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
-// import Header from './components/Header.vue'
+// import Header from './components/Header.vue'it b
 // import { reactive } from 'vue'
 import { useAuthStore } from './stores/auth'
 
